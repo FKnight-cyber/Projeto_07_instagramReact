@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+ion-icon.notLiked {
+  
+  color: lightgray;
+}
+
+ion-icon.liked {
+  color: red;
+}
+
 body {
   background-color: #FAFAFA;
   margin: 54px 0 0;
@@ -390,4 +399,5 @@ body {
     position: relative;
     top: 4px;
   }
+  
 }

@@ -3,8 +3,10 @@ import Stories from './Stories'
 import Posts from './Posts';
 import Sugestoes from './Sugestoes';
 import User from './User';
+import React from 'react';
 
 function App(){
+  
     return(
         <div>
         <div class="navbar">

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Posts(){
     const  userPosts = [
         {
@@ -25,9 +27,19 @@ export default function Posts(){
 }
 
 function Post(props){
+    let [like,setLike] = React.useState('notLiked md hydrated');
+    function likePost(){
+        console.log('AAAAAAAAAAAA')
+        if(like==='notLiked md hydrated'){
+          setLike('liked md hydrated');
+        }else{
+          setLike('notLiked md hydrated');
+        }
+      }
+
     return (
         <div class="post">
-            <div class="topo">
+            <div onClick={likePost} class="topo">
                 <div class="usuario">
                     <img src={props.imagem}/>
                     {props.user}
@@ -37,14 +49,14 @@ function Post(props){
                     </div>
                 </div>
 
-                <div class="conteudo">
+                <div onClick={likePost} class="conteudo">
                     <img src={props.contentImg} />
                 </div>
 
                 <div class="fundo">
                     <div class="acoes">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon onClick={likePost} class={like} name="heart"></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
