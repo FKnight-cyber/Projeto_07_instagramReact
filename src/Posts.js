@@ -28,11 +28,21 @@ export default function Posts(){
 
 function Post(props){
     let [like,setLike] = React.useState('notLiked md hydrated');
+    let [icon,setIcon] = React.useState('heart-outline');
     function likePost(){
         if(like==='notLiked md hydrated'){
           setLike('liked md hydrated');
+          setIcon('heart');
+        }
+      }
+
+      function likePostIcon(){
+        if(like==='notLiked md hydrated'){
+          setLike('liked md hydrated');
+          setIcon('heart');
         }else{
           setLike('notLiked md hydrated');
+          setIcon('heart-outline');
         }
       }
 
@@ -55,7 +65,7 @@ function Post(props){
                 <div class="fundo">
                     <div class="acoes">
                         <div>
-                            <ion-icon onClick={likePost} class={like} name="heart"></ion-icon>
+                            <ion-icon onClick={likePostIcon} class={like} name={icon}></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
