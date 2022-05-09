@@ -29,7 +29,6 @@ export default function Posts(){
 function Post(props){
     let [like,setLike] = React.useState('notLiked md hydrated');
     function likePost(){
-        console.log('AAAAAAAAAAAA')
         if(like==='notLiked md hydrated'){
           setLike('liked md hydrated');
         }else{
